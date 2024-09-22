@@ -21,6 +21,10 @@ set hidden
 set number relativenumber
 set laststatus=2 " 2=always show
 
+" Whitespace
+set list
+set listchars=lead:·,trail:·,nbsp:␣,tab:⮂\ ,precedes:←,extends:→
+
 " Search
 "  Incremental search is enabled in the defaults, so let's enable highlighting
 "  and let's use Ctrl+L to unhighlight
