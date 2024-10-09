@@ -1,6 +1,6 @@
 [submodule ".vim/pack/themes/start/vim-code-dark"]
 	path = .vim/pack/themes/start/vim-code-dark
-	url = https://github.com/tomasiser/vim-code-dark.git
+	url = https://github.com/delreluca/vim-code-dark.git
 [submodule ".vim/pack/plug/opt/vim-easymotion"]
 	path = .vim/pack/plug/opt/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
