@@ -1,0 +1,30 @@
+source ~/.vimrc
+
+" <https://github.com/JetBrains/ideavim/blob/master/doc/sethandler.md>
+" Keybinding conflict resolution: use JetBrains in insert mode, VIM in normal
+sethandler i:ide
+" on macOS there are not that many conflicts, you could also set a:vim
+" on Windows there are a lot of conflicts and some CTRL shortcuts are useful in insert mode, see below
+
+" INSERT MODE
+sethandler <C-o> i:vim " switch to normal mode for next command
+sethandler <C-v> i:vim " Unicode value
+sethandler <C-r> i:vim " paste register directly
+sethandler <C-a> i:vim " like C-r . -- the dot register contains the repeatable last action (like .)
+sethandler <C-u> i:vim " undo type mechanism (should not be in conflict actually)
+
+if has('macOS')
+else
+" WINDOWS STUFF
+sethandler <C-c> v:ide " Ctrl-C in visual/select mode can be still used for copy because habits die hard
+sethandler <C--> a:ide " Ctrl-- and shifted are used for navigation
+sethandler <C-_> a:ide
+endif
+
+" IDEAVIM Plug-ins
+set easymotion
+set highlightedyank
+
+" IDEAVIM specifics
+set clipboard+=unnamed
+set ideajoin
