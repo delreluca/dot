@@ -1,0 +1,22 @@
+[include]
+	path = ~/.gitconfig.local
+[core]
+	pager = delta
+	safecrlf = warn
+[push]
+	autoSetupRemote = true
+	default = upstream
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[rebase]
+	autoSquash = true
+[alias]
+	cobra = !git --git-dir=$HOME/.cfg --work-tree=$HOME
+	dog = log --decorate --oneline --graph
+	adog = log --all --decorate --oneline --graph
+	pfush = push --force-with-lease
+[delta]
+	side-by-side = true
+	hyperlinks = true
