@@ -1,6 +1,9 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
+" Comes with vim nowadays
+packadd matchit
+
 " Mainly for easymotion
 " To enable it :packadd vim-easymotion
 let mapleader="\<Space>"
