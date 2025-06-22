@@ -1,6 +1,5 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
-packadd matchit " Comes with vim nowadays
 
 " Mainly for easymotion
 " To enable it :packadd vim-easymotion
@@ -34,5 +33,11 @@ set listchars=lead:·,trail:·,nbsp:␣,tab:⮂\ ,precedes:←,extends:→
 set hlsearch
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
-" vim-highlightedyank settings
+" Bundled opt packages
+if has('patch-7.4.1649') | packadd matchit | endif
+if has('patch-9.0.1799') | packadd editorconfig | endif
+if has('patch-9.1.0375') | packadd comment | endif
+if has('patch-9.1.0497') | packadd nohlsearch | endif
+
+" vim-highlightedyank settings, replace with hlyank once patch-9.1.1228
 let g:highlightedyank_highlight_duration = 5000
