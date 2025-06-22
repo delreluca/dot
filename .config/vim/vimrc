@@ -1,3 +1,4 @@
+" vim:ft=vim:et:sw=2:sts=-1
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
