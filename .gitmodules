@@ -4,9 +4,6 @@
 [submodule ".vim/pack/plug/opt/vim-easymotion"]
 	path = .vim/pack/plug/opt/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
-[submodule ".vim/pack/themes/start/colorschemes"]
-	path = .vim/pack/themes/start/colorschemes
-	url = https://github.com/vim/colorschemes.git
 [submodule ".vim/pack/plug/start/vim-numbertoggle"]
 	path = .vim/pack/plug/start/vim-numbertoggle
 	url = https://github.com/jeffkreeftmeijer/vim-numbertoggle.git
