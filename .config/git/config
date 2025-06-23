@@ -13,7 +13,7 @@
 [rebase]
 	autoSquash = true
 [alias]
-	cobra = !git --git-dir=$HOME/.cfg --work-tree=$HOME
+	cobra = !git --git-dir=$HOME/.cobra --work-tree=$HOME
 	dog = log --decorate --oneline --graph
 	adog = log --all --decorate --oneline --graph
 	pfush = push --force-with-lease
