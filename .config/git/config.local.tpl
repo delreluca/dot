@@ -6,7 +6,7 @@
 [commit]
 	gpgsign = true
 [includeIf "gitdir:~/foo"]
-	path = ~/.gitconfig.foo
+	path = config.foo
 [credential "https://github.com"]
 	helper = 
 	# !gh should work if it's on the PATH
