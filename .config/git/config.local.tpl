@@ -5,7 +5,7 @@
 	signingkey = 
 [commit]
 	gpgsign = true
-[includeIf "gitdir:~/foo"]
+[includeIf "gitdir:~/foo/"]
 	path = config.foo
 [credential "https://github.com"]
 	helper = 
