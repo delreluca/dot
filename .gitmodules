@@ -7,9 +7,6 @@
 [submodule ".vim/pack/plug/start/vim-numbertoggle"]
 	path = .config/vim/pack/plug/start/vim-numbertoggle
 	url = https://github.com/jeffkreeftmeijer/vim-numbertoggle.git
-[submodule ".vim/pack/plug/start/vim-highlightedyank"]
-	path = .config/vim/pack/plug/start/vim-highlightedyank
-	url = https://github.com/machakann/vim-highlightedyank.git
 [submodule ".vim/pack/themes/start/space-vim-dark"]
 	path = .config/vim/pack/themes/start/space-vim-dark
 	url = https://github.com/liuchengxu/space-vim-dark
