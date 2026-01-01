@@ -13,6 +13,7 @@ end
 # dotnet (installation via script)
 if test -x ~/.dotnet/dotnet
 	fish_add_path -g ~/.dotnet
+	fish_add_path -g ~/.dotnet/tools
 	set -gx DOTNET_CLI_TELEMETRY_OPTOUT 1
 	set -gx DOTNET_ROOT (dirname (which dotnet))
 end
