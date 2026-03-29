@@ -4,6 +4,10 @@
 [core]
 	pager = delta
 	safecrlf = warn
+[fetch]
+	prune = true
+[pull]
+	rebase = true
 [push]
 	autoSetupRemote = true
 	default = upstream
