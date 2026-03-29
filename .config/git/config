@@ -23,6 +23,11 @@
 	ui = auto
 [branch]
 	sort = -committerdate
+[status]
+	short = true
+	branch = true
+[help]
+	autocorrect = prompt
 [rebase]
 	autoSquash = true
 [alias]
@@ -33,3 +38,4 @@
 [delta]
 	side-by-side = true
 	hyperlinks = true
+	syntax-theme = Catppuccin Frappe
