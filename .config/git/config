@@ -11,6 +11,14 @@
 [push]
 	autoSetupRemote = true
 	default = upstream
+[commit]
+	verbose = 2
+[diff]
+	algorithm = histogram
+	colorMoved = default
+	mnemonicPrefix = true
+[merge]
+	conflictstyle = zdiff3
 [column]
 	ui = auto
 [branch]
