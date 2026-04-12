@@ -3,10 +3,10 @@
 	url = https://github.com/delreluca/vim-code-dark.git
 [submodule ".vim/pack/plug/opt/vim-easymotion"]
 	path = .config/vim/pack/plug/opt/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion.git
+	url = https://github.com/delreluca/vim-easymotion.git
 [submodule ".vim/pack/plug/start/vim-numbertoggle"]
 	path = .config/vim/pack/plug/start/vim-numbertoggle
-	url = https://github.com/jeffkreeftmeijer/vim-numbertoggle.git
+	url = https://github.com/delreluca/vim-numbertoggle.git
 [submodule ".vim/pack/themes/start/space-vim-dark"]
 	path = .config/vim/pack/themes/start/space-vim-dark
-	url = https://github.com/liuchengxu/space-vim-dark
+	url = https://github.com/delreluca/space-vim-dark
