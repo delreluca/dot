@@ -2,6 +2,8 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
+scriptencoding utf-8
+
 " Mainly for easymotion
 " To enable it :packadd vim-easymotion
 let mapleader="\<Space>"
