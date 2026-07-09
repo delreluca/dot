@@ -1,3 +1,5 @@
 python-preference = "only-managed"
 
 system-certs = true
+
+exclude-newer = "P7D"
