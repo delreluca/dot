@@ -21,10 +21,13 @@ let g:codedark_italics=1
 
 " Windows & buffers
 set cmdheight=2
+set wildoptions=pum,fuzzy
 set confirm
 set hidden
 set number relativenumber
 set laststatus=2 " 2=always show
+
+set statusline=%{%&modified?'%#Warning#':'%#Bold#'%}%2n%r%h%w%q\ %#PMenuSel#%f%*%<\ %Y\ %{&fileformat}\ %{&fenc}%{%&bomb?'%#ErrorMsg#-bom%*':''%}%{%&eol?'↩':'%#ErrorMsg#¶%*'%}%=%l:%c\ U+%04B\ %P
 
 " Whitespace
 set list
