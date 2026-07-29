@@ -1,5 +1,3 @@
-source ~/.config/vim/vimrc
-
 " <https://github.com/JetBrains/ideavim/blob/master/doc/sethandler.md>
 " Keybinding conflict resolution: use JetBrains in insert mode, VIM in normal
 sethandler i:ide
@@ -8,23 +6,48 @@ sethandler i:ide
 
 " INSERT MODE
 sethandler <C-o> i:vim " switch to normal mode for next command
+sethandler <C-k> i:vim " digraph
 sethandler <C-v> i:vim " Unicode value
 sethandler <C-r> i:vim " paste register directly
 sethandler <C-a> i:vim " like C-r . -- the dot register contains the repeatable last action (like .)
 sethandler <C-u> i:vim " undo type mechanism (should not be in conflict actually)
 
-if has('macOS')
-else
-" WINDOWS STUFF
-sethandler <C-c> v:ide " Ctrl-C in visual/select mode can be still used for copy because habits die hard
-sethandler <C--> a:ide " Ctrl-- and shifted are used for navigation
-sethandler <C-_> a:ide
-endif
+" NORMAL MODE
+" Rider VS keymap uses CTRL+R, ... for refactoring
+" Map it to <leader>r here
+nmap <leader>rm <action>(ExtractMethod)
+nmap <leader>rc <action>(IntroduceConstant)
+nmap <leader>rf <action>(IntroduceField)
+nmap <leader>rp <action>(IntroduceParameter)
+nmap <leader>rv <action>(IntroduceVariable)
+nmap <leader>ro <action>(Move)
+nmap <leader>rr <action>(RenameElement)
+nmap <leader>rd <action>(SafeDelete)
+nmap <leader>rs <action>(ChangeSignature)
+nmap <leader>ri <action>(Inline)
 
-" IDEAVIM Plug-ins
-set easymotion
+" VIMRC equivalent, since sourcing is brittle (especially with defaults.vim)
+set scrolloff=5
+set incsearch
+
+let mapleader=" "
+
+set hlsearch
+nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
+
+" vim-numbertoggle - Automatic toggling between 'hybrid' and absolute line numbers
+" Maintainer:        <https://jeffkreeftmeijer.com>
+" Version:           2.1.2
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+
+" IDEAVIM plug-ins <https://github.com/JetBrains/ideavim/wiki/IdeaVim%20Plugins>
 set highlightedyank
+set commentary
 
 " IDEAVIM specifics
-set clipboard+=unnamed
 set ideajoin
