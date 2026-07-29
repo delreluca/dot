@@ -32,7 +32,7 @@ set statusline=%{%&modified?'%#Warning#':'%#Bold#'%}%2n%r%h%w%q\ %#PMenuSel#%f%*
 
 " Whitespace
 set list
-set listchars=lead:·,trail:·,nbsp:␣,tab:⮂\ ,precedes:←,extends:→
+set listchars=lead:·,trail:·,nbsp:␣,tab:⇄\ ,precedes:←,extends:→
 
 " Search
 "  Incremental search is enabled in the defaults, so let's enable highlighting
