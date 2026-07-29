@@ -23,4 +23,4 @@
 	helper = 
 	helper = !gh auth git-credential
 [diff "x509-pem-certificate"]
-	textconv = openssl x509 -noout -text -certopt no_sigdump,no_pubkey -in
+	textconv = openssl x509 -noout -text -certopt no_sigdump,no_pubkey -multi -in
