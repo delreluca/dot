@@ -10,3 +10,6 @@
 [submodule ".vim/pack/themes/start/space-vim-dark"]
 	path = .config/vim/pack/themes/start/space-vim-dark
 	url = https://github.com/delreluca/space-vim-dark
+[submodule ".config/tmux/themes/catppuccin"]
+	path = .config/tmux/themes/catppuccin
+	url = https://github.com/delreluca/catppuccin-tmux
