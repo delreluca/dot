@@ -22,5 +22,7 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !gh auth git-credential
+; [delta]
+; 	true-color = always|never
 [diff "x509-pem-certificate"]
 	textconv = openssl x509 -noout -text -certopt no_sigdump,no_pubkey -multi -in
