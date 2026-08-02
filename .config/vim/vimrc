@@ -22,10 +22,18 @@ let g:codedark_italics=1
 
 " Windows & buffers
 set cmdheight=2
-set wildoptions=pum,fuzzy
-set completeopt+=noselect,fuzzy,menuone " `noinsert` without `menuone` is useless: <https://github.com/vim/vim/issues/2877>
-set complete+=o
-set autocomplete
+if has('patch-8.2.4325') | set wildoptions+=pum | endif
+if has('patch-8.2.4463') | set wildoptions+=fuzzy | endif
+if has('patch-7.4.0775')
+   " <https://github.com/vim/vim/issues/2877>
+   " `no{insert,select}` without `menuone` (7.0.0213) is useless:
+  set completeopt+=noselect,menuone
+endif
+if has('patch-9.1.0463') | set completeopt+=fuzzy | endif
+if has('patch-9.1.1590')
+  set complete+=o " since 9.1.1301
+  set autocomplete
+endif
 set confirm
 set hidden
 set number relativenumber
