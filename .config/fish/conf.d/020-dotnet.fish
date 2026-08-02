@@ -1,5 +1,5 @@
 # When manually installed via installer script
-if not command -q dotnet; and test -x ~/.dotnet/dotnet
+if test -x ~/.dotnet/dotnet
 	fish_add_path -g ~/.dotnet
 	set -gx DOTNET_ROOT ~/.dotnet
 end
