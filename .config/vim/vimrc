@@ -56,6 +56,7 @@ if has('patch-7.4.1649') | packadd matchit | endif
 if has('patch-9.0.1799') | packadd editorconfig | endif
 if has('patch-9.1.0375') | packadd comment | endif
 if has('patch-9.1.0497') | packadd nohlsearch | endif
+if has('patch-9.1.0831') | packadd helptoc | endif
 if has('patch-9.1.1228')
   packadd hlyank
   let g:hlyank_duration = 5000
