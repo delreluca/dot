@@ -60,7 +60,10 @@ if has('patch-9.0.1799')
 endif
 if has('patch-9.1.0375') | packadd comment | endif
 if has('patch-9.1.0497') | packadd nohlsearch | endif
-if has('patch-9.1.0831') | packadd helptoc | endif
+if has('patch-9.1.0831')
+  let g:helptoc = {'shell_prompt': '^[a-zA-Z0-9-_.]\+@[a-zA-Z0-9-_.]\+ [^>]\+>\+ '} " default fish prompt
+  packadd helptoc
+endif
 if has('patch-9.1.1228')
   packadd hlyank
   let g:hlyank_duration = 5000
