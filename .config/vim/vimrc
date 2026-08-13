@@ -82,6 +82,7 @@ if has('patch-9.1.0831')
     let g:helptoc = {'shell_prompt': '^[a-zA-Z0-9-_.]\+@[a-zA-Z0-9-_.]\+ [^>]\+>\+ '} " default fish prompt
   endif
   packadd helptoc
+  nnoremap <silent> <Leader>t :HelpToc<CR>
 endif
 if has('patch-9.1.1228')
   packadd hlyank
