@@ -19,3 +19,6 @@
 [submodule ".config/vim/pack/plug/start/vim-yadi"]
 	path = .config/vim/pack/plug/start/vim-yadi
 	url = https://github.com/delreluca/vim-yadi
+[submodule ".config/vim/pack/plug/opt/tabular"]
+	path = .config/vim/pack/plug/opt/tabular
+	url = https://github.com/delreluca/tabular
