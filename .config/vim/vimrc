@@ -59,13 +59,19 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 if has('patch-7.4.1649') | packadd matchit | endif
 if has('patch-9.0.1799')
   packadd editorconfig
-  " cf. <https://github.com/vim/vim/blob/8c93e2d50dacabcd66cc4cb9573da497e98d3c26/runtime/pack/dist/opt/editorconfig/doc/editorconfig.txt#L62-L73> otherwise git commit messages can be affected
-  au FileType gitcommit let b:EditorConfig_disable = 1
+  " cf. <https://github.com/vim/vim/blob/8c93e2d50dacabcd66cc4cb9573da497e98d3c26/runtime/pack/dist/opt/editorconfig/doc/editorconfig.txt#L62-L73>
+  " otherwise git commit messages can be affected
+  augroup handsOffMyGitEditorconfig
+    autocmd!
+    autocmd FileType gitcommit let b:EditorConfig_disable = 1
+  augroup END
 endif
 if has('patch-9.1.0375') | packadd comment | endif
 if has('patch-9.1.0497') | packadd nohlsearch | endif
 if has('patch-9.1.0831')
-  let g:helptoc = {'shell_prompt': '^[a-zA-Z0-9-_.]\+@[a-zA-Z0-9-_.]\+ [^>]\+>\+ '} " default fish prompt
+  if !exists('g:helptoc')
+    let g:helptoc = {'shell_prompt': '^[a-zA-Z0-9-_.]\+@[a-zA-Z0-9-_.]\+ [^>]\+>\+ '} " default fish prompt
+  endif
   packadd helptoc
 endif
 if has('patch-9.1.1228')
