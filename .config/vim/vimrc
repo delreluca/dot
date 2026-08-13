@@ -45,7 +45,14 @@ set number relativenumber
 set laststatus=2 " 2=always show
 if has('patch-8.1.1270') | set shortmess-=S | endif " S=hide match number of search
 
-set statusline=%{%&modified?'%#Warning#':'%#Bold#'%}%2n%r%h%w%q\ %#PMenuSel#%f%*%<\ %Y\ %{&fileformat}\ %{&fenc}%{%&bomb?'%#ErrorMsg#-bom%*':''%}%{%&eol?'↩':'%#ErrorMsg#¶%*'%}%=%l:%c\ U+%04B\ %P
+set statusline=
+set statusline+=%2n%h%w%r%{&modified?'✦':'\ '}%*%.30f%<\ 
+set statusline+=%{strlen(&filetype)?&filetype:'-'}\ 
+set statusline+=%{&fileformat}\ 
+set statusline+=%{strlen(&fenc)?&fenc:&enc}
+set statusline+=%{%&bomb?'%#ErrorMsg#-bom':''%}%*
+set statusline+=%{%&eol?'↩':'%#ErrorMsg#¶'%}%*
+set statusline+=%=%l:%c\ U+%04B\ %P
 
 " Whitespace
 set list
