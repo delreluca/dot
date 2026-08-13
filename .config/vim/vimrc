@@ -22,6 +22,7 @@ augroup colourTweaks
   " g:codedark_italics is already taken care of above
   autocmd ColorSchemePre codedark let g:codedark_transparent=1
 augroup END
+set cursorline cursorlineopt=number
 colorscheme space-vim-dark
 
 " Windows & buffers
@@ -42,6 +43,7 @@ set confirm
 set hidden
 set number relativenumber
 set laststatus=2 " 2=always show
+if has('patch-8.1.1270') | set shortmess-=S | endif " S=hide match number of search
 
 set statusline=%{%&modified?'%#Warning#':'%#Bold#'%}%2n%r%h%w%q\ %#PMenuSel#%f%*%<\ %Y\ %{&fileformat}\ %{&fenc}%{%&bomb?'%#ErrorMsg#-bom%*':''%}%{%&eol?'↩':'%#ErrorMsg#¶%*'%}%=%l:%c\ U+%04B\ %P
 
