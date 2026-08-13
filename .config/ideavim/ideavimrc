@@ -48,6 +48,8 @@ augroup END
 " IDEAVIM plug-ins <https://github.com/JetBrains/ideavim/wiki/IdeaVim%20Plugins>
 set highlightedyank
 set commentary
+let g:camelcasemotion_key = ',' " Aligned with the OG CamcelCaseMotion we use in vim
+set CamelCaseMotion
 
 " IDEAVIM specifics
 set ideajoin

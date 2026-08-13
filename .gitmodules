@@ -13,3 +13,6 @@
 [submodule ".config/tmux/themes/catppuccin"]
 	path = .config/tmux/themes/catppuccin
 	url = https://github.com/delreluca/catppuccin-tmux
+[submodule ".config/vim/pack/plug/start/camelcasemotion"]
+	path = .config/vim/pack/plug/start/camelcasemotion
+	url = https://github.com/delreluca/camelcasemotion
