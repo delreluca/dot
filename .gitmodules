@@ -16,3 +16,6 @@
 [submodule ".config/vim/pack/plug/start/camelcasemotion"]
 	path = .config/vim/pack/plug/start/camelcasemotion
 	url = https://github.com/delreluca/camelcasemotion
+[submodule ".config/vim/pack/plug/start/vim-yadi"]
+	path = .config/vim/pack/plug/start/vim-yadi
+	url = https://github.com/delreluca/vim-yadi
