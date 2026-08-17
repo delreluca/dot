@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# This wrapper can handle both stdin and temporary file paths
+vim +MANPAGER --not-a-term "${1:--}"
