@@ -1,3 +1,4 @@
+" vim:ft=vim:et:sw=2:sts=-1:fdm=marker
 " <https://github.com/JetBrains/ideavim/blob/master/doc/sethandler.md>
 " Keybinding conflict resolution: use JetBrains in insert mode, VIM in normal
 sethandler i:ide
@@ -12,25 +13,25 @@ sethandler <C-r> i:vim " paste register directly
 sethandler <C-a> i:vim " like C-r . -- the dot register contains the repeatable last action (like .)
 sethandler <C-u> i:vim " undo type mechanism (should not be in conflict actually)
 
+let mapleader=" "
+
 " NORMAL MODE
 " Rider VS keymap uses CTRL+R, ... for refactoring
 " Map it to <leader>r here
-nmap <leader>rm <action>(ExtractMethod)
-nmap <leader>rc <action>(IntroduceConstant)
-nmap <leader>rf <action>(IntroduceField)
-nmap <leader>rp <action>(IntroduceParameter)
-nmap <leader>rv <action>(IntroduceVariable)
-nmap <leader>ro <action>(Move)
-nmap <leader>rr <action>(RenameElement)
-nmap <leader>rd <action>(SafeDelete)
-nmap <leader>rs <action>(ChangeSignature)
-nmap <leader>ri <action>(Inline)
+nmap <Leader>rm <action>(ExtractMethod)
+nmap <Leader>rc <action>(IntroduceConstant)
+nmap <Leader>rf <action>(IntroduceField)
+nmap <Leader>rp <action>(IntroduceParameter)
+nmap <Leader>rv <action>(IntroduceVariable)
+nmap <Leader>ro <action>(Move)
+nmap <Leader>rr <action>(RenameElement)
+nmap <Leader>rd <action>(SafeDelete)
+nmap <Leader>rs <action>(ChangeSignature)
+nmap <Leader>ri <action>(Inline)
 
 " VIMRC equivalent, since sourcing is brittle (especially with defaults.vim)
 set scrolloff=5
 set incsearch
-
-let mapleader=" "
 
 set hlsearch
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
@@ -38,6 +39,29 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 " vim-numbertoggle - Automatic toggling between 'hybrid' and absolute line numbers
 " Maintainer:        <https://jeffkreeftmeijer.com>
 " Version:           2.1.2
+"
+" MIT License {{{1
+
+" Copyright (c) 2017 Jeff Kreeftmeijer
+
+" Permission is hereby granted, free of charge, to any person obtaining a copy
+" of this software and associated documentation files (the "Software"), to deal
+" in the Software without restriction, including without limitation the rights
+" to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+" copies of the Software, and to permit persons to whom the Software is
+" furnished to do so, subject to the following conditions:
+
+" The above copyright notice and this permission notice shall be included in all
+" copies or substantial portions of the Software.
+
+" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+" IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+" FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+" OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+" SOFTWARE.
+" }}}
 
 augroup numbertoggle
   autocmd!
