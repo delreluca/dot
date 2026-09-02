@@ -22,8 +22,8 @@ augroup colourTweaks
   " g:codedark_italics is already taken care of above
   autocmd ColorSchemePre codedark let g:codedark_transparent=1
 augroup END
-set cursorline cursorlineopt=number
-colorscheme space-vim-dark
+set cursorline
+colorscheme zaibatsu
 
 " Windows & buffers
 set cmdheight=2
