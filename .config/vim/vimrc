@@ -64,6 +64,12 @@ set listchars=lead:·,trail:·,nbsp:␣,tab:⇄\ ,precedes:←,extends:→
 set hlsearch
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
+if executable('rg')
+  set grepprg=rg\ --vimgrep grepformat=%f:%l:%c:%m
+else
+  set grepprg& grepformat&
+endif
+
 " Bundled opt packages
 if has('patch-7.4.1649') | packadd matchit | endif
 if has('patch-9.0.1799')
