@@ -1,0 +1,11 @@
+#!/bin/sh
+
+attic_name=${1:-attic}
+
+if [ -e "$attic_name" ]
+then
+	echo "$0: cannot create $attic_name, already exists"
+	exit 1
+else
+	mkdir "$attic_name" && echo '*' > "$attic_name/.gitignore"
+fi
