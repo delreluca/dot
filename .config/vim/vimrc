@@ -58,6 +58,11 @@ set statusline+=%=%l:%c\ U+%04B\ %P
 set list
 set listchars=lead:·,trail:·,nbsp:␣,tab:⇄\ ,precedes:←,extends:→
 
+augroup noListForReading
+  autocmd!
+  autocmd FileType man setlocal nolist
+augroup END
+
 " Search
 "  Incremental search is enabled in the defaults, so let's enable highlighting
 "  and let's use Ctrl+L to unhighlight
