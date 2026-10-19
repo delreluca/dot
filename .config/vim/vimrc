@@ -58,11 +58,6 @@ set statusline+=%=%l:%c\ U+%04B\ %P
 set list
 set listchars=lead:·,trail:·,nbsp:␣,tab:⇄\ ,precedes:←,extends:→
 
-augroup noListForReading
-  autocmd!
-  autocmd FileType man setlocal nolist
-augroup END
-
 " Search
 "  Incremental search is enabled in the defaults, so let's enable highlighting
 "  and let's use Ctrl+L to unhighlight
@@ -77,15 +72,7 @@ endif
 
 " Bundled opt packages
 if has('patch-7.4.1649') | packadd matchit | endif
-if has('patch-9.0.1799')
-  packadd editorconfig
-  " cf. <https://github.com/vim/vim/blob/8c93e2d50dacabcd66cc4cb9573da497e98d3c26/runtime/pack/dist/opt/editorconfig/doc/editorconfig.txt#L62-L73>
-  " otherwise git commit messages can be affected
-  augroup handsOffMyGitEditorconfig
-    autocmd!
-    autocmd FileType gitcommit let b:EditorConfig_disable = 1
-  augroup END
-endif
+if has('patch-9.0.1799') | packadd editorconfig | endif
 if has('patch-9.1.0375') | packadd comment | endif
 if has('patch-9.1.0497') | packadd nohlsearch | endif
 if has('patch-9.1.0831')
