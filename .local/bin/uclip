@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if ! command -v cmd.exe 2>&1 >/dev/null
+then
+	echo "$0: cmd.exe not on PATH, aborting"
+	exit 1
+fi
+
+cmd.exe /C "chcp 65001 >NUL && clip" 2>/dev/null
