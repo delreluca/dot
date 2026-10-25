@@ -23,27 +23,28 @@ augroup colourTweaks
   autocmd ColorSchemePre codedark let g:codedark_transparent=1
 augroup END
 set cursorline
-colorscheme zaibatsu
+try
+  colorscheme zaibatsu
+catch
+  colorscheme space-vim-dark
+endtry
 
 " Windows & buffers
 set cmdheight=2
-if has('patch-8.2.4325') | set wildoptions+=pum | endif
-if has('patch-8.2.4463') | set wildoptions+=fuzzy | endif
-if has('patch-7.4.0775')
-   " <https://github.com/vim/vim/issues/2877>
-   " `no{insert,select}` without `menuone` (7.0.0213) is useless:
-  set completeopt+=noselect,menuone
-endif
-if has('patch-9.1.0463') | set completeopt+=fuzzy | endif
-if has('patch-9.1.1590')
-  set complete+=o " since 9.1.1301
-  set autocomplete
-endif
+silent! set wildoptions+=pum                                                                  " patch-8.2.4325
+silent! set wildoptions+=fuzzy                                                                " patch-8.2.4463
+" <https://github.com/vim/vim/issues/2877>: `no{insert,select}` without `menuone` is useless:   patch-7.4.0775, patch-7.0.0213
+silent! set completeopt+=noselect,menuone
+silent! set completeopt+=fuzzy                                                                " patch-9.1.0463
+try
+  set autocomplete                                                                            " patch-9.1.1590
+  set complete+=o                                                                             " patch-9.1.1301
+endtry
 set confirm
 set hidden
 set number relativenumber
 set laststatus=2 " 2=always show
-if has('patch-8.1.1270') | set shortmess-=S | endif " S=hide match number of search
+set shortmess-=S " S=hide match number of search                                                patch-8.1.1270
 
 set statusline=
 set statusline+=%2n%h%w%r%{&modified?'✦':'\ '}%*%.30f%<\ 
@@ -71,18 +72,18 @@ else
 endif
 
 " Bundled opt packages
-if has('patch-7.4.1649') | packadd matchit | endif
-if has('patch-9.0.1799') | packadd editorconfig | endif
-if has('patch-9.1.0375') | packadd comment | endif
-if has('patch-9.1.0497') | packadd nohlsearch | endif
-if has('patch-9.1.0831')
+silent! packadd matchit                                                                       " patch-7.4.1649
+silent! packadd editorconfig                                                                  " patch-9.0.1799
+silent! packadd comment                                                                       " patch-9.1.0375
+silent! packadd nohlsearch                                                                    " patch-9.1.0497
+try
+  packadd helptoc                                                                             " patch-9.1.0831
   if !exists('g:helptoc')
     let g:helptoc = {'shell_prompt': '^[a-zA-Z0-9-_.]\+@[a-zA-Z0-9-_.]\+ [^>]\+>\+ '} " default fish prompt
   endif
-  packadd helptoc
   nnoremap <silent> <Leader>t :HelpToc<CR>
-endif
-if has('patch-9.1.1228')
-  packadd hlyank
+endtry
+try
+  packadd hlyank                                                                              " patch-9.1.1228
   let g:hlyank_duration = 5000
-endif
+endtry
