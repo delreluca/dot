@@ -55,6 +55,11 @@ set statusline+=%{%&bomb?'%#ErrorMsg#-bom':''%}%*
 set statusline+=%{%&eol?'↩':'%#ErrorMsg#¶'%}%*
 set statusline+=%=%l:%c\ U+%04B\ %P
 
+" <https://github.com/vim/vim/discussions/21106>
+if exists("$TMUX")
+  set ttymouse=sgr
+endif
+
 " Whitespace
 set list
 set listchars=lead:·,trail:·,nbsp:␣,tab:⇄\ ,precedes:←,extends:→
